@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Configuration;
+using ButterCMS;
 
 namespace ButterCMS.Starter.Attributes
 {
@@ -16,8 +17,22 @@ namespace ButterCMS.Starter.Attributes
 
         public void OnActionExecuting(ActionExecutingContext context)
         {
-            if (this.configuration["ButterCMSAPIKey"] == null)
-                context.Result = new UnauthorizedResult();
+            if (String.IsNullOrEmpty(this.configuration["ButterCMSAPIKey"]))
+            {
+                context.Result = new RedirectToActionResult("UnauthorizedError", "Error", null);
+                return;
+            }
+
+            try
+            {
+                var client = new ButterCMSClient(this.configuration["ButterCMSAPIKey"]);
+                // Make a simple API call to validate the key
+                client.ListPostsAsync(1, 1).GetAwaiter().GetResult();
+            }
+            catch (InvalidKeyException)
+            {
+                context.Result = new RedirectToActionResult("UnauthorizedError", "Error", null);
+            }
         }
 
         public void OnActionExecuted(ActionExecutedContext context)

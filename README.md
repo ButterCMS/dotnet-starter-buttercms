@@ -8,15 +8,7 @@ You can view a [live demo hosted on Heroku](https://dotnet-starter-buttercms.her
 
 ## Prerequisites
 
-- `.NET Core SDK` at 3.1 or higher
-
-Note for Windows users - This SDK has been tested on the following configuration:
-
-      6.0.300 .NET SDK
-
-      .NET Runtimes:
-      Microsoft.AspNetCore.App 3.1.25
-      Microsoft.NETCore.App 3.1.25
+- `.NET Core SDK` at 8.0 or higher
 
 ## 1. Installation
 
