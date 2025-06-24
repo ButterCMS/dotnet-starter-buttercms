@@ -4,7 +4,7 @@
   "repository": "https://github.com/ButterCMS/dotnet-starter-buttercms",
   "keywords": ["aspnet", "core", "buttercms", "cms", "blog"],
   "logo": "https://cdn.buttercms.com/R3fbtvoRT2CqEQSmk8hb",
-  "stack": "heroku-20",
+  "stack": "heroku-24",
   "buildpacks": [
     {
       "url": "https://github.com/jincod/dotnetcore-buildpack"
