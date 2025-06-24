@@ -33,6 +33,7 @@
     <Folder Include="Views\Shared\Components\Header\" />
     <Folder Include="Views\Shared\Components\Footer\" />
     <Folder Include="Views\Error\" />
+    <Folder Include="Views\MissingAuthToken\" />
     <Folder Include="Attributes\" />
   </ItemGroup>
 </Project>
