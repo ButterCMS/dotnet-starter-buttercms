@@ -47,8 +47,11 @@
             navbarCollapse.classList.remove('show')
         })
     );
-    navbarToggler.addEventListener('click', function() {
-        navbarToggler.classList.toggle("active");
-    }) 
+
+    if (navbarToggler){
+        navbarToggler.addEventListener('click', function() {
+            navbarToggler.classList.toggle("active");
+        }) 
+    }
 
 })();

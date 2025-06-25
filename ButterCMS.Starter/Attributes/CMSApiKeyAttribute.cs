@@ -19,7 +19,7 @@ namespace ButterCMS.Starter.Attributes
         {
             if (String.IsNullOrEmpty(this.configuration["ButterCMSAPIKey"]))
             {
-                context.Result = new RedirectToActionResult("UnauthorizedError", "Error", null);
+                context.Result = new RedirectToActionResult("MissingAuthToken", "MissingAuthToken", null);
                 return;
             }
 
@@ -31,7 +31,7 @@ namespace ButterCMS.Starter.Attributes
             }
             catch (InvalidKeyException)
             {
-                context.Result = new RedirectToActionResult("UnauthorizedError", "Error", null);
+                context.Result = new RedirectToActionResult("NotFoundError", "Error", null);
             }
         }
 
