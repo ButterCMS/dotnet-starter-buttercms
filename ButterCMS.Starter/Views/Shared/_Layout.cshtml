@@ -35,6 +35,7 @@
     @RenderBody()
 
     @if (ViewBag.NoFooter == null || !ViewBag.NoFooter)
+    {
         @await Component.InvokeAsync("Footer");
     }
 
