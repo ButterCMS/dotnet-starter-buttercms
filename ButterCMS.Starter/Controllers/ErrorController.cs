@@ -11,11 +11,5 @@ namespace ButterCMS.Starter.Controllers
         {
             return View("NotFound");
         }
-
-        [Route("{controller}/401")]
-        public IActionResult UnauthorizedError()
-        {
-            return View("Unauthorized");
-        }
     }
 }
